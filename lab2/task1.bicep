@@ -481,6 +481,7 @@ resource vm2 'Microsoft.Compute/virtualMachines@2025-04-01' = {
         }
       ]
     }
+    userData: base64('#!/bin/bash\nsudo apt-get update\nsudo apt-get install -y nginx\necho "<h1>Welcome to VM2 (Spoke 1)</h1><p>Running behind the Hub and Spoke Architecture</p>" | sudo tee /var/www/html/index.html')
   }
 }
 
@@ -531,5 +532,6 @@ resource vm3 'Microsoft.Compute/virtualMachines@2025-04-01' = {
         }
       ]
     }
+    userData: base64('#!/bin/bash\nsudo apt-get update\nsudo apt-get install -y nginx\necho "<h1>Welcome to VM3 (Spoke 2)</h1><p>Running behind the Hub and Spoke Architecture</p>" | sudo tee /var/www/html/index.html')
   }
 }
